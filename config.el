@@ -85,6 +85,17 @@
 (add-to-list 'default-frame-alist '(width . 160))
 
 (evil-set-initial-state 'calc-mode 'normal)
+
+(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
+(map! :leader
+      (:prefix ("e" . "elfeed")
+       :desc "Open elfeed" "e" #'elfeed))
+
+(map! :leader
+      (:prefix ("d" . "powerthesaurus-lookup-word")
+               :desc "Lookup word" "t" #'powerthesaurus-lookup-dwim))
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
